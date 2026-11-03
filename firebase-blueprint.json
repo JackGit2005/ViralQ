@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User account profile for Virallo creator studio",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "createdAt": { "type": "integer" }
+      },
+      "required": ["userId"]
+    },
+    "SavedClip": {
+      "title": "SavedClip",
+      "description": "User saved viral moment clip with cut boundaries and metadata",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "videoId": { "type": "string" },
+        "clipTitle": { "type": "string" },
+        "formatRatio": { "type": "string" },
+        "timeRangeFormatted": { "type": "string" },
+        "startSeconds": { "type": "integer" },
+        "endSeconds": { "type": "integer" },
+        "durationSeconds": { "type": "integer" },
+        "whyViralExplanation": { "type": "string" },
+        "overallScore": { "type": "integer" },
+        "platformLinksJson": { "type": "string" },
+        "isFavorite": { "type": "boolean" },
+        "createdAt": { "type": "integer" }
+      },
+      "required": ["id", "userId", "videoId", "clipTitle"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "#/entities/UserProfile",
+      "description": "Creator user profile document"
+    },
+    "/users/{userId}/saved_clips/{clipId}": {
+      "schema": "#/entities/SavedClip",
+      "description": "User saved viral video clips"
+    }
+  }
+}

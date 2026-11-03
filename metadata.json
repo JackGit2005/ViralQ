@@ -1,0 +1,6 @@
+{
+  "name": "Virallo",
+  "description": "AI YouTube viral moment finder, multi-format clip generator (9:16, 1:1, 16:9), and styled caption studio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
